@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI';
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.topics-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.topics-header h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.topics-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.topics-nav a {
+    text-decoration: none;
+    color: #666;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+}
+
+.topics-nav a.active {
+    color: #2563eb;
+    border-bottom: 2px solid #2563eb;
+}
+
+.topics-nav a:hover {
+    color: #2563eb;
+}
+
+.cards-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 1rem 0;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 300px;
+    width: calc(33.333% - 1.33rem);
+    flex-shrink: 0;
+}
+
+.card-icon {
+    width: 100%;          
+    height: 160px;        
+    object-fit: cover;
+    margin-bottom: 1rem;
+    margin-top: auto;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.card p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+
+.how-it-works {
+    position: relative;
+    color: white;
+    padding: 3rem;
+    border-radius: 12px;
+    margin-top: 4rem;
+    overflow: hidden;
+    isolation: isolate; 
+}
+
+.how-it-works::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("/assets/photo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+
+.how-it-works::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(45, 212, 191, 0.75),
+        rgba(45, 171, 191, 0.95)
+    );
+    z-index: -1;
+}
+
+.how-it-works h2,
+.steps,
+.button {
+    position: relative;
+}
+
+.step-content h3 {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.step-content p {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.steps::before {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.step-icon {
+    background: rgba(255, 255, 255, 0.25);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    padding-left: 24px;
+}
+
+.steps::before {
+    content: '';
+    position: absolute;
+    left: 48px; 
+    top: 48px; 
+    bottom: 48px;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(-50%);
+}
+
+.step {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    position: relative;
+    padding: 1rem 0;
+}
+
+.step-icon {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    z-index: 1;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.step-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.step-content p {
+    opacity: 0.9;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.button {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto 0;
+    padding: 0.75rem 2rem;
+    background: white;
+    color: #2dd4bf;
+    text-decoration: none;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+@media (max-width: 1000px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .cards-grid {
+        padding: 0 1rem;
+    }
+
+    .how-it-works {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .steps {
+        padding-left: 12px;
+    }
+
+    .steps::before {
+        left: 36px;
+    }
+
+    .step-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9em;
+    }
+}
